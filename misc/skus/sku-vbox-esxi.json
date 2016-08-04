@@ -1,0 +1,11 @@
+{
+    "name": "Virtualbox ESX Install",
+    "discoveryGraphName": "Graph.Noop.Install.Esx",
+    "discoveryGraphOptions": {},
+    "rules": [
+        {
+            "path": "dmi.System Information.Product Name",
+            "equals": "VirtualBox"
+        }
+    ]
+}

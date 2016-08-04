@@ -1,0 +1,10 @@
+{
+  "name": "5010a",
+  "identifiers": [],
+  "snmpSettings": {
+    "host": "10.63.250.8",
+    "community": "public"
+  },
+  "type": "switch",
+  "autoDiscover": true
+}

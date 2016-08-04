@@ -1,0 +1,10 @@
+---
+- name: Mesos Server
+  hosts: all
+  sudo: no
+  roles:
+    - apt
+    - build
+    - git
+    - node
+    - snmptool

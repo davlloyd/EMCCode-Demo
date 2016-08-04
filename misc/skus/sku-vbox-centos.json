@@ -1,0 +1,11 @@
+{
+    "name": "Virtualbox CentOS Install",
+    "discoveryGraphName": "Graph.Noop.Install.CentOS",
+    "discoveryGraphOptions": {},
+    "rules": [
+        {
+            "path": "dmi.System Information.Product Name",
+            "equals": "VirtualBox"
+        }
+    ]
+}

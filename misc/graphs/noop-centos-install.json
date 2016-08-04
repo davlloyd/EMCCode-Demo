@@ -1,0 +1,30 @@
+{
+"friendlyName": "Noop Install CentOS",
+"injectableName": "Graph.Noop.Install.CentOS",
+"options": {
+  "defaults": {
+    "obmServiceName": "noop-obm-service",
+    "version": "7",
+    "installScript": "centos-ks",
+    "dnsServers": ["8.8.8.8", "8.8.4.4"],
+    "repo": "{{api.server}}/Centos/7.0",
+    "rootPassword": "P@55w0rd",
+    "users": [{
+      "name": "rackhd",
+      "password": "P@55w0rd",
+      "uid": 1010
+    }]
+    },
+  "install-centos": {
+    "schedulerOverrides": {
+      "timeout": 3600000
+    }
+  }
+},
+"tasks": [
+  {
+    "label": "install-centos",
+    "taskName": "Task.Os.Install.CentOS"
+  }
+]
+}

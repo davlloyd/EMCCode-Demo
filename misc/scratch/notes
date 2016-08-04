@@ -1,0 +1,2 @@
+Set OBM NoOp
+curl -X PATCH -H "Content-Type:application/json" localhost/api/current/nodes/5784125a34a3c2fd4c4282a0 -d '{ "obmSettings": [ { "service": "noop-obm-service", "config": { } } ] }'

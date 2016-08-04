@@ -1,0 +1,11 @@
+{
+"name": "vSphere ESXi Install",
+"discoveryGraphName": "Graph.Noop.Install.Esx",
+"discoveryGraphOptions": {},
+"rules": [
+    {
+        "path": "dmi.System Information.Manufacturer",
+        "contains": "VMware"
+    }
+]
+}

@@ -1,0 +1,11 @@
+vmaccepteula
+
+#change root password
+rootpw <%=rootPassword%>
+
+#Set Disk Setup
+clearpart --firstdisk --overwritevmfs
+install --firstdisk --overwritevmfs
+
+network --bootproto=dhcp --device=vmnic0
+reboot

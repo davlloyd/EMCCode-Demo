@@ -1,0 +1,9 @@
+iseq ${platform} efi && goto is_efi || goto not_efi
+
+:not_efi
+kernel <%=repo%>/mboot.c32 -c <%=esxBootConfigTemplateUri%>
+boot
+
+:is_efi
+kernel <%=repo%>/efi/boot/bootx64.efi -c <%=esxBootConfigTemplateUri%>
+boot

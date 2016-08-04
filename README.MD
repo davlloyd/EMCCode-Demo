@@ -1,6 +1,7 @@
 #RackHD, Mesos, Docker, Rexray and DVDi Vagrant Demo Setup
 
 ###Prerequisites:
+
 - Install git (*https://git-scm.com/downloads*)
 - Install Vagrant (*https://www.vagrantup.com/downloads.html*)
 - Install Virtualbox (*https://www.virtualbox.org/wiki/Downloads*)
@@ -11,11 +12,15 @@
       - On OSX you can get it to start automatically by editing the file *$HOME/Library/LaunchAgents/org.virtualbox.vboxwebsrv.plist* and changing the run value from 'disabled' to 'enabled'
 - Clone repository to local directory '*git clone https://github.com/davlloyd/EMCCode-Demo.git*
 
-### Getting started
+### Getting started:
+
 Run the Shell script *code-demo.sh* and select what you want to do... that easy. If you are using Windows then all my testing is doen within Git Bash Shell for shell scripting support.
 
 
-### Notes
+### Notes:
+
 - RackHD port 8080 is redirected to local 9090 so to get to the UI you use the url http://localhost:9090/ui
-- 
+- the /misc/certs directory is used for the certificates to be injected into the trusted sset if you have intrusive certificates on your network
+- ISO ikmages for CentOS and ESXi need to be located in the /misc/images directory to get them exploded out for testing in RackHD
+
 

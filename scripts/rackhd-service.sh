@@ -59,4 +59,4 @@ sudo service isc-dhcp-server start
 
 logger "blue" "Clone git On-Tools repo to get setup_iso.py"
 cd /var/renasar
-git clone https://github.com/RackHD/on-tools.git
+sudo git clone https://github.com/RackHD/on-tools.git

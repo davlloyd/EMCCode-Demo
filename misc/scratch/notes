@@ -2,6 +2,7 @@ Set OBM NoOp
 curl -X PATCH -H "Content-Type:application/json" localhost/api/current/nodes/5784125a34a3c2fd4c4282a0 -d '{ "obmSettings": [ { "service": "noop-obm-service", "config": { } } ] }'
 
 Manually add host
+curl -X POST -H 'Content-Type: application/json' -d '{"name":"host2", "type": "compute", "ipmi-obm-service": {"host": "192.168.0.6", "user": "administrator", "password": "password"}}' rackhd01.home.local:8080/api/1.1/nodes
 curl -X POST -H 'Content-Type: application/json' -d '{"name":"host3", "type": "compute", "ipmi-obm-service": {"host": "192.168.0.7", "user": "administrator", "password": "password"}}' rackhd01.home.local:8080/api/1.1/nodes
 curl -X POST -H 'Content-Type: application/json' -d '{"name":"host3", "type": "compute" }' rackhd01.home.local:8080/api/1.1/nodes
 
@@ -17,6 +18,8 @@ curl -X PUT -H 'Content-Type: application/json' rackhd01.home.local:8080/api/1.1
 curl rackhd01.home.local:8080/api/1.1/files/list/all | python -m json.tool
 
 
+power off
+curl -X POST -H 'Content-Type: application/json' -d '{"name": "Graph.PowerOff.Node"}' rackhd01.homne.local:8080/api/2.0/nodes/57b649816e0fe3a956c85b27/workflows | python -m json.tool
 
 
 

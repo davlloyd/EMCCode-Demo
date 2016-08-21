@@ -11,7 +11,6 @@ sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58
 sudo apt-get -y install linux-image-extra-$(uname -r)
 
 # Add docker repo to sources
-sudo su
 sudo echo deb https://apt.dockerproject.org/repo ubuntu-trusty main >/etc/apt/sources.list.d/docker.list
 sudo apt-get -y update
 

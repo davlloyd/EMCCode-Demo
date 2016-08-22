@@ -2,12 +2,19 @@ Set OBM NoOp
 curl -X PATCH -H "Content-Type:application/json" localhost/api/current/nodes/5784125a34a3c2fd4c4282a0 -d '{ "obmSettings": [ { "service": "noop-obm-service", "config": { } } ] }'
 
 Manually add host
-curl -X POST -H 'Content-Type: application/json' -d '{"name":"host2", "type": "compute", "ipmi-obm-service": {"host": "192.168.0.6", "user": "administrator", "password": "password"}}' rackhd01.home.local:8080/api/1.1/nodes
+curl -X POST -H 'Content-Type: application/json' -d '{"name":"host2", "type": "compute", "ipmi-obm-service": {"host": "192.168.250.30", "user": "admin", "password": "B3ach8um"}}' rackhd01.vce.asc:8080/api/1.1/nodes
+
+
 curl -X POST -H 'Content-Type: application/json' -d '{"name":"host3", "type": "compute", "ipmi-obm-service": {"host": "192.168.0.7", "user": "administrator", "password": "password"}}' rackhd01.home.local:8080/api/1.1/nodes
 curl -X POST -H 'Content-Type: application/json' -d '{"name":"host3", "type": "compute" }' rackhd01.home.local:8080/api/1.1/nodes
 
 get discovery graph to run
 curl -X POST -H 'Content-Type: application/json' -d '{"name": "Graph.MgmtSKU.Discovery", "options":{"defaults":{"nodeId": "57b59f6d16160158047cc854"}}}' rackhd01.home.local:8080/api/1.1/nodes/57b59f6d16160158047cc854/workflows
+
+
+curl -X PUT -H 'Content-Type: application/json' -d '{ "nodeId": "57b97df6b88468f4041ec799", "service": "ipmi-obm-service", "config": { "user": "admin", "password": "B3ach8um", "host": "10.63.250.30" }}' rackhd01.vce.asc:8080/api/2.0/obms
+curl -X POST -H 'Content-Type: application/json' -d '{"name": "Graph.MgmtSKU.Discovery", "options":{"defaults":{"nodeId": "57b97df6b88468f4041ec799"}}}' rackhd01.vce.asc:8080/api/1.1/nodes/57b97df6b88468f4041ec799/workflows
+
 
 Add OBM Settings
 curl -X PUT -H 'Content-Type: application/json' -d '{ "nodeId": "57b59f6d16160158047cc854", "service": "ipmi-obm-service", "config": { "user": "administrator", "password": "password", "host": "192.168.0.7" }}' rackhd01.home.local:8080/api/2.0/obms

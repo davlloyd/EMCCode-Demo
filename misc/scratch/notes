@@ -2,7 +2,7 @@ Set OBM NoOp
 curl -X PATCH -H "Content-Type:application/json" localhost/api/current/nodes/5784125a34a3c2fd4c4282a0 -d '{ "obmSettings": [ { "service": "noop-obm-service", "config": { } } ] }'
 
 Manually add host
-curl -X POST -H 'Content-Type: application/json' -d '{"name":"host2", "type": "compute", "ipmi-obm-service": {"host": "192.168.0.6", "user": "administrator", "password": "password"}}' rackhd01.home.local:8080/api/1.1/nodes
+curl -X POST -H 'Content-Type: application/json' -d '{"name":"host2", "type": "compute", "ipmi-obm-service": {"host": "192.168.0.6", "user": "administrator", "password": "password"}}' rackhd01.home.local:8080/api/current/nodes
 curl -X POST -H 'Content-Type: application/json' -d '{"name":"host3", "type": "compute", "ipmi-obm-service": {"host": "192.168.0.7", "user": "administrator", "password": "password"}}' rackhd01.home.local:8080/api/1.1/nodes
 curl -X POST -H 'Content-Type: application/json' -d '{"name":"host3", "type": "compute" }' rackhd01.home.local:8080/api/1.1/nodes
 
@@ -11,6 +11,9 @@ curl -X POST -H 'Content-Type: application/json' -d '{"name": "Graph.MgmtSKU.Dis
 
 Add OBM Settings
 curl -X PUT -H 'Content-Type: application/json' -d '{ "nodeId": "57b59f6d16160158047cc854", "service": "ipmi-obm-service", "config": { "user": "administrator", "password": "password", "host": "192.168.0.7" }}' rackhd01.home.local:8080/api/2.0/obms
+
+Add NOOP OBM Settings
+curl -X PUT -H 'Content-Type: application/json' -d '{ "nodeId": "57c1173d6473bd63491d6932", "service": "vbox-obm-service", "config": {  }}' localhost:9090/api/2.0/obms
 
 
 post file

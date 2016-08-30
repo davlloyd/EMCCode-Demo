@@ -65,7 +65,7 @@ curl -H "Content-Type: application/json" -X POST --data @/vagrant/misc/skus/sku-
 
 # Import ESXi content 
 curl -H "Content-Type: application/json" -X PUT --data @/vagrant/misc/graphs/noop-esxi-install.json http://localhost:8080/api/1.1/workflows
-#curl -H "Content-Type: application/json" -X POST --data @/vagrant/misc/skus/sku-vbox-esxi.json http://localhost:8080/api/1.1/skus
+curl -H "Content-Type: application/json" -X POST --data @/vagrant/misc/skus/sku-vbox-esxi.json http://localhost:8080/api/1.1/skus
 #curl -H "Content-Type: application/json" -X POST --data @/vagrant/misc/skus/sku-vsphere-esxi.json http://localhost:8080/api/1.1/skus
 #curl -H "Content-Type: application/json" -X PUT --data @noop-esxi-install-custom.json http://rackhd01.home.local:8080/api/1.1/workflows
 #curl -H "Content-Type: application/json" -X PUT --data @noop-esxi-install-custom.json http://localhost:9090/api/1.1/workflows

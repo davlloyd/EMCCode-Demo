@@ -51,5 +51,7 @@
     "tftpBindAddress": "172.31.128.1",
     "tftpBindPort": 69,
     "tftpRoot": "./static/tftp",
-    "minLogLevel": 2
+    "minLogLevel": 2,
+    "enableUPnP": true,
+    "ssdpBindAddress": "0.0.0.0"
 }

@@ -9,6 +9,7 @@ logger "yellow" "*** Custom OS settings"
 
 logger "blue" "*** Set EMC Internal certificate trust"
 sudo chmod 666 /etc/ssl/certs/ca-certificates.crt 
+sudo cp /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt.org
 sudo cat /vagrant/misc/certs/EMC-SSL.cer /vagrant/misc/certs/EMC-CA.cer >>  /etc/ssl/certs/ca-certificates.crt 
 
 sudo apt-get -y update

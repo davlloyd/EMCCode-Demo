@@ -94,4 +94,23 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         rackhd.vm.provision :shell, path: "scripts/rackhd-docker.sh"
 
      end
+
+   # Virtual HW SERVER, pinched this from EMC{code}
+    config.vm.define "quanta" do |quanta|
+        quanta.vm.box = "InfraSIM/quanta_d51"
+        quanta.vm.provider "virtualbox" do |v|
+            v.gui = true
+            v.memory = 2048
+            v.cpus = 2
+            v.customize ["modifyvm", :id, "--nicpromisc2", "allow-all", "--ioapic", "on"]
+        end
+        #quanta.vm.network :public_network
+        quanta.vm.network "private_network", virtualbox__intnet: "closednet", auto_config: false, nic_type: "82540EM"
+        quanta.vm.provision "shell", inline: <<-SHELL
+            sudo ifconfig eth1 up
+            sleep 2
+            sudo udhcpc -i br1
+        SHELL
+    end
+     
 end

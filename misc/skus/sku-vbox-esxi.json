@@ -6,6 +6,10 @@
         {
             "path": "dmi.System Information.Product Name",
             "equals": "VirtualBox"
+        },
+        {
+            "path": "ohai.memory.total",
+            "equals": "4047764kB"
         }
     ]
 }

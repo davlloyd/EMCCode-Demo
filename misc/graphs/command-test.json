@@ -1,0 +1,16 @@
+{
+    "friendlyName": "Add Host to Photon Controller",
+    "injectableName": "Graph.Conig.Photon.Host",
+    "options": {
+        "photonHost": "10.63.251.31", 
+        "apiPort": "9000",
+        "hostAddress": "",
+        "hostUser": "",
+        "hostPassword": "", 
+        "commands" : [ 
+        { 
+             "command": "bash myscript.sh", 
+             "downloadUrl": "/api/1.1/templates/myscript.sh" 
+        }
+    ]
+}

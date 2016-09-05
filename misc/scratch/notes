@@ -12,6 +12,8 @@ curl -X POST -H 'Content-Type: application/json' -d '{"name": "Graph.MgmtSKU.Dis
 Add OBM Settings
 curl -X PUT -H 'Content-Type: application/json' -d '{ "nodeId": "57b59f6d16160158047cc854", "service": "ipmi-obm-service", "config": { "user": "administrator", "password": "password", "host": "192.168.0.7" }}' rackhd01.home.local:8080/api/2.0/obms
 
+curl -X PUT -H 'Content-Type: application/json' -d '{ "nodeId": "57b59f6d16160158047cc854", "service": "ipmi-obm-service", "config": { "user": "admin", "password": "B3ach8um", "host": "10.63.250.27" }}' rackhd01.home.local:8080/api/2.0/obms
+
 
 post file
 curl -X PUT -H 'Content-Type: application/json' rackhd01.home.local:8080/api/1.1/files/:code-demo.sh
